@@ -66,7 +66,7 @@ module "elastic-beanstalk-environment" {
   loadbalancer_type                  = var.loadbalancer_type
   elb_scheme                         = var.elb_scheme
   tier                               = var.tier
-  version_label                      = var.version_label
+  #version_label                      = var.version_label
   force_destroy                      = var.force_destroy
 
   instance_type    = var.instance_type
