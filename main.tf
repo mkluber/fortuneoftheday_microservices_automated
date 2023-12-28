@@ -114,6 +114,7 @@ module "elastic-beanstalk-environment" {
   application_subnets  = module.vpc.public_subnets
   loadbalancer_redirect_http_to_https = true
   enable_loadbalancer_logs = false
+  loadbalancer_certificate_arn = module.acm.acm_certificate_arn
 
   allow_all_egress = true
 
