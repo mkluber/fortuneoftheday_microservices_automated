@@ -37,7 +37,7 @@ module "vpc" {
 
   azs             = var.azs
   public_subnets = var.public_subnets
-  private_subnets = var.private_subnets
+#  private_subnets = var.private_subnets
   create_igw = "true"
   default_route_table_name = var.default_route_table_name
   map_public_ip_on_launch = "true"
@@ -90,7 +90,8 @@ module "elastic-beanstalk-environment" {
 
   vpc_id               = module.vpc.vpc_id
   loadbalancer_subnets = module.vpc.public_subnets
-  application_subnets  = module.vpc.private_subnets
+  associate_public_ip_address = true
+  application_subnets  = module.vpc.public_subnets
   loadbalancer_redirect_http_to_https = true
   enable_loadbalancer_logs = false
 
