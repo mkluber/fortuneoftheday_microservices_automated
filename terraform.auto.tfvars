@@ -76,7 +76,7 @@ version_label = "1"
 
 dns_domain = "outworldindustries.com"
 dns_zone_id = "Z01280511PKX9H52OLIQH"
-dns_subdomain = "api"
+dns_subdomain = "site"
 
 // https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html
 additional_settings = [
