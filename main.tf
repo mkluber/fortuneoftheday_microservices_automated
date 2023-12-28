@@ -10,10 +10,10 @@ module "acm" {
 
   validation_method = "DNS"
 
-  # subject_alternative_names = [
-  #   "*.my-domain.com",
-  #   "app.sub.my-domain.com",
-  # ]
+  subject_alternative_names = [
+    # "*.outworldindustries.com",
+    "site.outworldindustries.com",
+  ]
 
   wait_for_validation = true
 
