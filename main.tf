@@ -82,8 +82,8 @@ module "elastic-beanstalk-environment" {
   autoscale_upper_increment = var.autoscale_upper_increment
 
   vpc_id               = module.vpc.vpc_id
-  loadbalancer_subnets = [module.vpc.public_subnets]
-  application_subnets  = [module.vpc.public_subnets]
+  loadbalancer_subnets = module.vpc.public_subnets
+  application_subnets  = module.vpc.public_subnets
 
   allow_all_egress = true
 
