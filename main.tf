@@ -115,6 +115,7 @@ module "elastic-beanstalk-environment" {
   loadbalancer_redirect_http_to_https = true
   enable_loadbalancer_logs = false
   loadbalancer_certificate_arn = module.acm.acm_certificate_arn
+  loadbalancer_ssl_policy = var.loadbalancer_ssl_policy
 
   allow_all_egress = true
 

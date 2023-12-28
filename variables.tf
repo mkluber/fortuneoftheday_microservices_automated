@@ -96,6 +96,11 @@ variable "dns_subdomain" {
   description = "Route53 subdomain to be created. The module will create sub-domain DNS record in the parent zone for the EB environment"
 }
 
+variable "loadbalancer_ssl_policy" {
+  type        = string
+  description = "SSL policy used by the elastic beanstalk load balancer"
+}
+
 variable "availability_zone_selector" {
   type        = string
   description = "Availability Zone selector"

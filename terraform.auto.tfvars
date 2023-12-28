@@ -77,6 +77,7 @@ version_label = "1"
 dns_domain = "outworldindustries.com"
 dns_zone_id = "Z01280511PKX9H52OLIQH"
 dns_subdomain = "site"
+loadbalancer_ssl_policy = "ELBSecurityPolicy-TLS13-1-2-2021-06"
 
 // https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html
 additional_settings = [
