@@ -86,6 +86,7 @@ module "elastic-beanstalk-environment" {
   vpc_id               = module.vpc.vpc_id
   loadbalancer_subnets = module.vpc.public_subnets
   application_subnets  = module.vpc.public_subnets
+  enable_loadbalancer_logs = false
 
   allow_all_egress = true
 
@@ -122,7 +123,7 @@ module "elastic-beanstalk-environment" {
 
 data "aws_iam_policy_document" "fortune_dynamodb_permissions" {
     statement {
-      sid = "fortune_dynamodb_permissions"
+      sid = "fortuneDynamodbPermissions"
       actions = [
                 "dynamodb:PutItem",
                 "dynamodb:DescribeTable",
