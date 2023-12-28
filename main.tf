@@ -89,7 +89,8 @@ module "elastic-beanstalk-environment" {
 
   vpc_id               = module.vpc.vpc_id
   loadbalancer_subnets = module.vpc.public_subnets
-  application_subnets  = module.vpc.public_subnets
+  application_subnets  = module.vpc.private_subnets
+  loadbalancer_redirect_http_to_https = true
   enable_loadbalancer_logs = false
 
   allow_all_egress = true

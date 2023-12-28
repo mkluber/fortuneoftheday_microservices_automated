@@ -3,6 +3,7 @@ region = "eu-central-1"
 cidr = "137.137.0.0/16"
 azs = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
 public_subnets = ["137.137.1.0/24", "137.137.2.0/24", "137.137.3.0/24"]
+private_subnets = ["137.137.11.0/24", "137.137.22.0/24", "137.137.33.0/24"]
 vpc_name = "fortunevpc"
 default_route_table_name = "fortuneroute"
 dynamodb_table_name = "Fortunes"

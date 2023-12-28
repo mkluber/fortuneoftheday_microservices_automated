@@ -15,6 +15,10 @@ variable "public_subnets" {
   description = "Public subnets created by the VPC"
 }
 
+variable "private_subnets" {
+  description = "Private subnets created by the VPC"
+}
+
 variable "vpc_name" {
   description = "Name of the created VPC"
 }
