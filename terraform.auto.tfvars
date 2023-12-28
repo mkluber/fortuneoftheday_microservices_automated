@@ -11,11 +11,9 @@ dynamodb_table_range_key = "FortuneOrigin"
 
 availability_zones = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
 
-# namespace = "eg"
-
-# stage = "test"
-
-# name = "eb-env"
+namespace = "eg"
+stage = "test"
+name = "eb-env"
 appname = "fortuneapp"
 description = "Terraform Fortune App"
 

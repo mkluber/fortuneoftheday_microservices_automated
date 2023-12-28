@@ -83,6 +83,10 @@ module "elastic-beanstalk-environment" {
   autoscale_upper_bound     = var.autoscale_upper_bound
   autoscale_upper_increment = var.autoscale_upper_increment
 
+  namespace = var.namespace
+  stage = var.stage
+  name = var.name
+
   vpc_id               = module.vpc.vpc_id
   loadbalancer_subnets = module.vpc.public_subnets
   application_subnets  = module.vpc.public_subnets
