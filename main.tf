@@ -37,6 +37,7 @@ module "vpc" {
 
   azs             = var.azs
   public_subnets = var.public_subnets
+  private_subnets = var.private_subnets
   create_igw = "true"
   default_route_table_name = var.default_route_table_name
   map_public_ip_on_launch = "true"
