@@ -2,6 +2,26 @@ provider "aws" {
   region = var.region
 }
 
+module "acm" {
+  source  = "terraform-aws-modules/acm/aws"
+
+  domain_name  = var.dns_domain
+  zone_id      = var.dns_zone_id
+
+  validation_method = "DNS"
+
+  # subject_alternative_names = [
+  #   "*.my-domain.com",
+  #   "app.sub.my-domain.com",
+  # ]
+
+  wait_for_validation = true
+
+  tags = {
+    Name = "var.dns_domain"
+  }
+}
+
 module "dynamodb-table" {
   source  = "terraform-aws-modules/dynamodb-table/aws"
 

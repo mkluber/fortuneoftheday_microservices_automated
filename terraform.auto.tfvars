@@ -74,6 +74,7 @@ solution_stack_name = "64bit Amazon Linux 2023 v4.0.7 running Python 3.11"
 
 version_label = "1"
 
+dns_domain = "outworldindustries.com"
 dns_zone_id = "Z01280511PKX9H52OLIQH"
 dns_subdomain = "api"
 
