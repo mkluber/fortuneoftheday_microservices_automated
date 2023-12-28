@@ -59,7 +59,7 @@ module "elastic-beanstalk-environment" {
   dns_subdomain              = var.dns_subdomain
 
   wait_for_ready_timeout             = var.wait_for_ready_timeout
-  elastic_beanstalk_application_name = module.elastic_beanstalk_application.elastic_beanstalk_application_name
+  elastic_beanstalk_application_name = var.appname
   environment_type                   = var.environment_type
   loadbalancer_type                  = var.loadbalancer_type
   elb_scheme                         = var.elb_scheme
@@ -82,21 +82,21 @@ module "elastic-beanstalk-environment" {
   autoscale_upper_increment = var.autoscale_upper_increment
 
   vpc_id               = module.vpc.vpc_id
-  loadbalancer_subnets = module.vpc.public_subnet_ids
-  application_subnets  = module.vpc.public_subnet_ids
+  loadbalancer_subnets = [module.vpc.public_subnets]
+  application_subnets  = [module.vpc.public_subnets]
 
   allow_all_egress = true
 
-  additional_security_group_rules = [
-    {
-      type                     = "ingress"
-      from_port                = 0
-      to_port                  = 65535
-      protocol                 = "-1"
-      source_security_group_id = module.vpc.vpc_default_security_group_id
-      description              = "Allow all inbound traffic from trusted Security Groups"
-    }
-  ]
+  # additional_security_group_rules = [
+  #   {
+  #     type                     = "ingress"
+  #     from_port                = 0
+  #     to_port                  = 65535
+  #     protocol                 = "-1"
+  #     source_security_group_id = module.vpc.vpc_default_security_group_id
+  #     description              = "Allow all inbound traffic from trusted Security Groups"
+  #   }
+  # ]
 
   rolling_update_enabled  = var.rolling_update_enabled
   rolling_update_type     = var.rolling_update_type
@@ -115,7 +115,7 @@ module "elastic-beanstalk-environment" {
   prefer_legacy_service_policy = false
   scheduled_actions            = var.scheduled_actions
 
-  context = module.this.context
+#  context = module.this.context
 }
 
 data "aws_iam_policy_document" "fortune_dynamodb_permissions" {

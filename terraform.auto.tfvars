@@ -16,7 +16,7 @@ availability_zones = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
 # stage = "test"
 
 # name = "eb-env"
-
+appname = "fortuneapp"
 description = "Terraform Fortune App"
 
 tier = "WebServer"
