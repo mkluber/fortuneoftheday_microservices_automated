@@ -46,6 +46,8 @@ module "elastic-beanstalk-application" {
   source  = "cloudposse/elastic-beanstalk-application/aws"
   version = "0.11.1"
 
+  name = var.appname
+
 }
 
 module "elastic-beanstalk-environment" {
