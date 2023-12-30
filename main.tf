@@ -63,12 +63,39 @@ module "vpc" {
   map_public_ip_on_launch = "true"
 }
 
+module "s3-bucket" {
+  source  = "terraform-aws-modules/s3-bucket/aws"
+
+  bucket = "fortunebucket"
+  acl    = "private"
+
+  versioning = {
+    enabled = true
+  }
+}
+
+module "s3-bucket_object" {
+  source  = "terraform-aws-modules/s3-bucket/aws//modules/object"
+
+  bucket = module.s3-bucket.s3_bucket_id
+  key = fortunefile.zip
+  file_source = fortunefile.zip
+}
+
 module "elastic-beanstalk-application" {
   source  = "cloudposse/elastic-beanstalk-application/aws"
   version = "0.11.1"
 
   name = var.appname
 
+}
+
+resource "aws_elastic_beanstalk_application_version" "fortuneappver" {
+  name        = "fortuneappver"
+  application = "fortuneappver"
+  description = "Fortune application created by Terraform"
+  bucket      = aws_s3_bucket.default.id
+  key         = aws_s3_object.default.id
 }
 
 module "elastic-beanstalk-environment" {
