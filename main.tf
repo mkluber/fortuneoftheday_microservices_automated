@@ -85,15 +85,13 @@ module "elastic-beanstalk-application" {
   source  = "cloudposse/elastic-beanstalk-application/aws"
   version = "0.11.1"
 
-  namespace = var.namespace
-  stage     = var.stage
-  name      = var.appname
+  name = var.appname
 
 }
 
 resource "aws_elastic_beanstalk_application_version" "fortuneappver" {
   name        = "fortuneappver"
-  application = "fortuneappver"
+  application = module.elastic-beanstalk-application.name
   description = "Fortune application created by Terraform"
   bucket      = module.s3-bucket.s3_bucket_id
   key         = module.s3-bucket_object.s3_object_id
