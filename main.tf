@@ -66,7 +66,7 @@ provider "aws" {
 module "s3-bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
 
-  bucket = "fortunebucket_lalika"
+  bucket = "fortunebucket-lalika"
   acl    = "private"
 
   versioning = {
