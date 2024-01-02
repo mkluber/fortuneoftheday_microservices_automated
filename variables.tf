@@ -267,3 +267,23 @@ variable "enable_loadbalancer_logs" {
   type        = bool
   description = "Whether to enable Load Balancer Logging to the S3 bucket."
 }
+
+
+
+
+
+
+variable "s3_bucket_name" {
+  type        = string
+  description = "The name of the S3 bucket"
+}
+
+variable "s3_file_name" {
+  type        = string
+  description = "The file name of the application source bundle"
+}
+
+variable "s3_file_source" {
+  type        = string
+  description = "The source of the application source bundle"
+}
