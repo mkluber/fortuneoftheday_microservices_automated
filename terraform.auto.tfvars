@@ -72,7 +72,7 @@ elb_scheme = "public"
 // https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.docker
 solution_stack_name = "64bit Amazon Linux 2023 v4.0.7 running Python 3.11"
 
-version_label = "1"
+version_label = "fortuneapp_version_label"
 
 dns_domain = "outworldindustries.com"
 dns_zone_id = "Z01280511PKX9H52OLIQH"

@@ -90,7 +90,7 @@ module "elastic-beanstalk-application" {
 }
 
 resource "aws_elastic_beanstalk_application_version" "fortuneappver" {
-  name        = "fortuneappver"
+  name        = var.version_label
   application = module.elastic-beanstalk-application.elastic_beanstalk_application_name
   description = "Fortune application created by Terraform"
   bucket      = module.s3-bucket.s3_bucket_id
@@ -113,7 +113,7 @@ module "elastic-beanstalk-environment" {
   loadbalancer_type                  = var.loadbalancer_type
   elb_scheme                         = var.elb_scheme
   tier                               = var.tier
-  #version_label                      = var.version_label
+  version_label                      = var.version_label
   force_destroy                      = var.force_destroy
 
   instance_type    = var.instance_type
