@@ -85,7 +85,9 @@ module "elastic-beanstalk-application" {
   source  = "cloudposse/elastic-beanstalk-application/aws"
   version = "0.11.1"
 
-  name = var.appname
+  namespace = var.namespace
+  stage     = var.stage
+  name      = var.appname
 
 }
 
