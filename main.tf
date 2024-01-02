@@ -91,7 +91,7 @@ module "elastic-beanstalk-application" {
 
 resource "aws_elastic_beanstalk_application_version" "fortuneappver" {
   name        = "fortuneappver"
-  application = module.elastic-beanstalk-application.name
+  application = module.elastic-beanstalk-application.elastic_beanstalk_application_name
   description = "Fortune application created by Terraform"
   bucket      = module.s3-bucket.s3_bucket_id
   key         = module.s3-bucket_object.s3_object_id
