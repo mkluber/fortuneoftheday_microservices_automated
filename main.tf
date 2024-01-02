@@ -78,8 +78,8 @@ module "s3-bucket_object" {
   source  = "terraform-aws-modules/s3-bucket/aws//modules/object"
 
   bucket = module.s3-bucket.s3_bucket_id
-  key = fortunefile.zip
-  file_source = fortunefile.zip
+  key = "fortunefile.zip"
+  file_source = "fortunefile.zip"
 }
 
 # module "elastic-beanstalk-application" {
