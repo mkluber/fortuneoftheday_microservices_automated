@@ -76,7 +76,7 @@ module "s3-bucket" {
 data "archive_file" "fortuneapp_zip" {
   type        = "zip"
   source_dir = "package"
-  output_path = "package.zip"
+  output_path = "fortunefile.zip"
 }
 
 module "s3-bucket_object" {
@@ -84,7 +84,7 @@ module "s3-bucket_object" {
 
   bucket = module.s3-bucket.s3_bucket_id
   key = var.s3_file_name
-  file_source = data.fortuneapp_zip.output_path
+  file_source = var.s3_file_source
 }
 
 module "elastic-beanstalk-application" {

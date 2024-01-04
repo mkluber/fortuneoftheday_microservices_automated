@@ -282,7 +282,7 @@ variable "s3_file_name" {
   description = "The file name of the application source bundle"
 }
 
-# variable "s3_file_source" {
-#   type        = string
-#   description = "The source of the application source bundle"
-# }
+variable "s3_file_source" {
+  type        = string
+  description = "The source of the application source bundle"
+}
