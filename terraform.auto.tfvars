@@ -106,4 +106,4 @@ enable_loadbalancer_logs     = false
 
 s3_bucket_name = "fortuneappsource"
 s3_file_name = "fortuneapp.zip"
-s3_file_source = "package/fortunefile.zip"
+# s3_file_source = "package/fortunefile.zip"
